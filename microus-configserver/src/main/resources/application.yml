@@ -3,13 +3,6 @@ spring:
     config:
       server:
         git:
-           uri: file:C:/Users/rafael.oliveira/Documents/Workspaces/WorkspaceMicroservices/spring-boot-microservices/sample-config
-#          uri: https://github.com/anilallewar/sample-config
-# While in development mode, you can configure the config server to pick up configuration files from
-# the file system
-          
-
-# Defines the port where the config server is running so that rest of the services can pick up 
-# their external configurations
+           uri: file:C:/Users/rafael.oliveira/Documents/Workspaces/WorkspaceMicroservices/microus/microus-configserver/src/main/resources/confs
 server:
-  port: 8000          
+  port: 8888          

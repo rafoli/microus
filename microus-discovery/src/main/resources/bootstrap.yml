@@ -1,3 +1,6 @@
 spring:
   application:
-    name: configserver
+    name: discovery
+  cloud:
+    config:
+      uri: http://localhost:8888
