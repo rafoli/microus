@@ -1,1 +1,1 @@
-include 'microus-configserver'
+include 'microus-configserver', 'microus-discovery'

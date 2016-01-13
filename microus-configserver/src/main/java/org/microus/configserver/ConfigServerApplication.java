@@ -1,4 +1,4 @@
-package org.microus.conifgserver;
+package org.microus.configserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -8,9 +8,9 @@ import org.springframework.context.annotation.ComponentScan;
 @EnableAutoConfiguration
 @EnableConfigServer
 @ComponentScan
-public class Application {
+public class ConfigServerApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(ConfigServerApplication.class, args);
 	}
 }
  
