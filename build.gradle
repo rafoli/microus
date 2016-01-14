@@ -25,6 +25,7 @@ subprojects {
 	apply plugin: 'java'
 	apply plugin: 'eclipse'
 	apply plugin: 'spring-boot'
+	apply plugin: 'application'
 	group = 'org.microus'
 	version = '0.0.1-SNAPSHOT'
 	

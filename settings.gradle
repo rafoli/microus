@@ -1,1 +1,4 @@
-include 'microus-configserver', 'microus-eureka', 'microus-zuul'
+include 'microus-configserver'
+include 'microus-eureka'
+include 'microus-zuul'
+include 'microus-samples:userservice'
