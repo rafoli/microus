@@ -1,4 +1,4 @@
-package org.microus.apigateway;
+package org.microus.zuul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -13,10 +13,10 @@ import org.springframework.context.annotation.Configuration;
 @EnableAutoConfiguration
 @EnableZuulProxy
 @EnableEurekaClient
-public class ApiGatewayApplication {
+public class ZuulApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApiGatewayApplication.class, args);
+		SpringApplication.run(ZuulApplication.class, args);
 	}
 
 }

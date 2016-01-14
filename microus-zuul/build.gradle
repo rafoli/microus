@@ -1,5 +1,5 @@
 jar {
-	baseName = 'microus-apigateway'
+	baseName = 'microus-zuul'
 }
 
 repositories {

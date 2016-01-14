@@ -1,5 +1,5 @@
 jar {
-	baseName = 'sample-webservice-registry'
+	baseName = 'microus-eureka'
 }
 
 dependencies {
@@ -9,8 +9,10 @@ dependencies {
 	compile("org.springframework.cloud:spring-cloud-starter-eureka-server:${springCloudVersion}")
 }
 
-//mainClassName = 'org.microus.discovery.Application'
-
 springBoot {
 	requiresUnpack = ['com.netflix.eureka:eureka-core','com.netflix.eureka:eureka-client']
+}
+
+bootRepackage {
+    mainClass = 'org.microus.eureka.EurekaApplication'
 }

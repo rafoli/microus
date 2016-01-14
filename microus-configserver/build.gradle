@@ -1,10 +1,5 @@
 jar {
-	baseName = 'microus-discovery'
-}
-
-repositories {
-	mavenCentral()
-	jcenter()
+	baseName = 'microus-configserver'
 }
 
 dependencies {
