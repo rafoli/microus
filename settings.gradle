@@ -1,0 +1,1 @@
+include 'microus-configserver', 'microus-eureka', 'microus-zuul'
