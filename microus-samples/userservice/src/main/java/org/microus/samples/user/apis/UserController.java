@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 /**
  * REST endpoint for the user functionality
  * 
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/")
+@Api(value = "/user")
 public class UserController {
 
 	@Value("${mail.domain}")
@@ -33,6 +37,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(method = RequestMethod.GET, headers = "Accept=application/json")
+	@ApiOperation(value = "All users")
 	public List<UserDTO> getUsers() {
 		return users;
 	}
@@ -44,6 +49,7 @@ public class UserController {
 	 * @return
 	 */
 	@RequestMapping(value = "{userName}", method = RequestMethod.GET, headers = "Accept=application/json")
+	@ApiOperation(value = "Get user by username")
 	public UserDTO getUserByUserName(@PathVariable("userName") String userName) {
 		UserDTO userDtoToReturn = null;
 		for (UserDTO currentUser : users) {
