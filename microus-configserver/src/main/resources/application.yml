@@ -3,7 +3,7 @@ spring:
     config:
       server:
         git:
-           uri: file:/Users/rafoli/Documents/Workspaces/Study/microus-sample-config
-           #uri: file:C:/Users/rafael.oliveira/Documents/Workspaces/WorkspaceMicroservices/microus/microus-configserver/src/main/resources/confs
+           uri: https://github.com/rafoli/microus-samples-config
+
 server:
   port: 8888        

@@ -1,5 +1,5 @@
 jar {
-	baseName = 'microus-zuul'
+	baseName = 'todofrontend'
 }
 
 dependencies {
@@ -7,6 +7,6 @@ dependencies {
 	compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
 	compile("org.springframework.cloud:spring-cloud-config-client:${springCloudVersion}")
 	compile("org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}")
-	compile("org.springframework.cloud:spring-cloud-starter-zuul:${springCloudVersion}")
-
 }
+
+mainClassName = 'org.microus.sample.todo.TodoFrontendApplication'
