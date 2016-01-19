@@ -3,12 +3,15 @@ jar {
 }
 
 dependencies {
-	compile("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
-	compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
-	compile("org.springframework.cloud:spring-cloud-config-client:${springCloudVersion}")
-	compile("org.springframework.cloud:spring-cloud-starter-eureka:${springCloudVersion}")
+	compile 'org.springframework.boot:spring-boot-starter-web'
+	compile 'org.springframework.boot:spring-boot-starter-actuator'
+	compile 'org.springframework.cloud:spring-cloud-starter-config'
+    compile 'org.springframework.cloud:spring-cloud-starter-eureka'
 	compile("io.springfox:springfox-swagger2:2.3.1")
 	compile('io.springfox:springfox-swagger-ui:2.3.1')
+	
+	compile 'org.jolokia:jolokia-core'
+	
 	compile('org.springframework.hateoas:spring-hateoas:0.19.0.RELEASE')
 }
 
