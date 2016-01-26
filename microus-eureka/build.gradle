@@ -16,3 +16,18 @@ springBoot {
 bootRepackage {
     mainClass = 'org.microus.eureka.EurekaApplication'
 }
+
+distDocker {
+    exposePort 8761
+    setEnvironment 'JAVA_OPTS', '-Dspring.profiles.active=docker'
+}
+
+docker {
+	dockerBinary = '/usr/local/bin/docker'
+    baseImage = 'java:8'
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.10'
+}

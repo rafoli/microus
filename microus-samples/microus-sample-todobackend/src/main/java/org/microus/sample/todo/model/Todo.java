@@ -1,24 +1,10 @@
 package org.microus.sample.todo.model;
 
 public class Todo {
-	private int id;
+	private Long id;
 	private String title;
 	private Boolean completed;
 	private Integer order;
-
-	public Todo() {
-	}
-
-	public Todo(String title) {
-		this.title = title;
-	}
-
-	public Todo(int id, String title, Boolean completed, Integer order) {
-		this.id = id;
-		this.title = title;
-		this.completed = completed;
-		this.order = order;
-	}
 
 	public String getTitle() {
 		return title;
@@ -26,26 +12,6 @@ public class Todo {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (o == null || getClass() != o.getClass())
-			return false;
-
-		Todo todo = (Todo) o;
-
-		if (id != todo.id)
-			return false;
-
-		return true;
-	}
-
-	@Override
-	public int hashCode() {
-		return id;
 	}
 
 	public boolean isCompleted() {
@@ -64,16 +30,11 @@ public class Todo {
 		this.order = order;
 	}
 
-	public Todo merge(Todo newTodo) {
-		return new Todo(id, nonNull(newTodo.title, title), nonNull(newTodo.completed, completed),
-				nonNull(newTodo.order, order));
-	}
-
 	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

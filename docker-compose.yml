@@ -1,0 +1,14 @@
+configserver:
+  image: org.microus/microus-configserver:0.0.1-SNAPSHOT
+eureka:
+  image: org.microus/microus-eureka:0.0.1-SNAPSHOT
+  ports:
+   - 81:8761
+  links:
+   - configserver
+myapp:
+  image: org.microus.samples/myapp:0.1.0
+  ports:
+   - 8080:8080
+  links:
+   - eureka
