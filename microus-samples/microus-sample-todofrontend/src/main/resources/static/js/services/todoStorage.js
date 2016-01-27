@@ -13,7 +13,7 @@ angular.module('todomvc')
 
 		// Detect if an API backend is present. If so, return the API module, else
 		// hand off the localStorage adapter
-		return $http.get('http://localhost:8766/api/todo')
+		return $http.get('http://localhost:8766/api/todos')
 			.then(function () {
 				return $injector.get('api');
 			}, function () {
@@ -27,53 +27,53 @@ angular.module('todomvc')
 		var store = {
 			todos: [],
 
-			api: $resource('http://localhost:8766/api/todo/:id', null,
+			api: $resource('http://localhost:8766/api/todos/:id', null,
 				{
 					update: { method:'PUT' }
 				}
 			),
 
 			clearCompleted: function () {
-				var originalTodos = store.todos.slice(0);
+				var originalTodos = store.todos.links.slice(0);
 
-				var incompleteTodos = store.todos.filter(function (todo) {
+				var incompleteTodos = store.todos.links.filter(function (todo) {
 					return !todo.completed;
 				});
 
-				angular.copy(incompleteTodos, store.todos);
+				angular.copy(incompleteTodos, store.todos.links);
 
 				return store.api.delete(function () {
 					}, function error() {
-						angular.copy(originalTodos, store.todos);
+						angular.copy(originalTodos, store.todos.links);
 					});
 			},
 
 			delete: function (todo) {
-				var originalTodos = store.todos.slice(0);
+				var originalTodos = store.todos.links.slice(0);
 
-				store.todos.splice(store.todos.indexOf(todo), 1);
+				store.todos.links.splice(store.todos.links.indexOf(todo), 1);
 				return store.api.delete({ id: todo.id },
 					function () {
 					}, function error() {
-						angular.copy(originalTodos, store.todos);
+						angular.copy(originalTodos, store.todos.links);
 					});
 			},
 
 			get: function () {
 				return store.api.query(function (resp) {
-					angular.copy(resp, store.todos);
+					angular.copy(resp, store.todos.links);
 				});
 			},
 
 			insert: function (todo) {
-				var originalTodos = store.todos.slice(0);
+				var originalTodos = store.todos.links.slice(0);
 
 				return store.api.save(todo,
 					function success(resp) {
 						todo.id = resp.id;
-						store.todos.push(todo);
+						store.todos.links.push(todo);
 					}, function error() {
-						angular.copy(originalTodos, store.todos);
+						angular.copy(originalTodos, store.todos.links);
 					})
 					.$promise;
 			},
@@ -106,14 +106,14 @@ angular.module('todomvc')
 			clearCompleted: function () {
 				var deferred = $q.defer();
 
-				var incompleteTodos = store.todos.filter(function (todo) {
+				var incompleteTodos = store.todos.links.filter(function (todo) {
 					return !todo.completed;
 				});
 
-				angular.copy(incompleteTodos, store.todos);
+				angular.copy(incompleteTodos, store.todos.links);
 
-				store._saveToLocalStorage(store.todos);
-				deferred.resolve(store.todos);
+				store._saveToLocalStorage(store.todos.links);
+				deferred.resolve(store.todos.links);
 
 				return deferred.promise;
 			},
@@ -121,10 +121,10 @@ angular.module('todomvc')
 			delete: function (todo) {
 				var deferred = $q.defer();
 
-				store.todos.splice(store.todos.indexOf(todo), 1);
+				store.todos.links.splice(store.todos.links.indexOf(todo), 1);
 
-				store._saveToLocalStorage(store.todos);
-				deferred.resolve(store.todos);
+				store._saveToLocalStorage(store.todos.links);
+				deferred.resolve(store.todos.links);
 
 				return deferred.promise;
 			},
@@ -132,8 +132,8 @@ angular.module('todomvc')
 			get: function () {
 				var deferred = $q.defer();
 
-				angular.copy(store._getFromLocalStorage(), store.todos);
-				deferred.resolve(store.todos);
+				angular.copy(store._getFromLocalStorage(), store.todos.links);
+				deferred.resolve(store.todos.links);
 
 				return deferred.promise;
 			},
@@ -141,10 +141,10 @@ angular.module('todomvc')
 			insert: function (todo) {
 				var deferred = $q.defer();
 
-				store.todos.push(todo);
+				store.todos.links.push(todo);
 
-				store._saveToLocalStorage(store.todos);
-				deferred.resolve(store.todos);
+				store._saveToLocalStorage(store.todos.links);
+				deferred.resolve(store.todos.links);
 
 				return deferred.promise;
 			},
@@ -152,10 +152,10 @@ angular.module('todomvc')
 			put: function (todo, index) {
 				var deferred = $q.defer();
 
-				store.todos[index] = todo;
+				store.todos.links[index] = todo;
 
-				store._saveToLocalStorage(store.todos);
-				deferred.resolve(store.todos);
+				store._saveToLocalStorage(store.todos.links);
+				deferred.resolve(store.todos.links);
 
 				return deferred.promise;
 			}

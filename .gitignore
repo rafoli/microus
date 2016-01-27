@@ -3,3 +3,4 @@
 .project
 .classpath
 build/
+bower_components/
