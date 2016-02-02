@@ -1,0 +1,7 @@
+spring:
+  application:
+    # Name of the service that is using with Zuul routes to forward specific requests to this service  
+    name: appbackend  
+  cloud:
+    config:
+      uri: http://localhost:8888

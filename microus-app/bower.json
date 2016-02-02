@@ -1,0 +1,34 @@
+{
+  "name": "microus-app",
+  "version": "0.1.0",
+  "homepage": "http://microus.org",
+  "authors": [
+    "Rafael Oliveira"
+  ],
+  "description": "Microservices, Spring Cloud, Netflix",
+  "keywords": [
+    "microservices",
+    "microus",
+    "spring-cloud",
+    "netflix"
+  ],
+  "license": "Apache",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "pages",
+    "index.html",
+    "/js"
+  ],
+  "main": [],
+  "dependencies": {
+    "angular": "~1.4.9",
+    "angular-route": "~1.4.9",
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.2.0",
+    "materialize": "~0.97.5"
+  }
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<title>Hello Message</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300" rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<style type="text/css">
+[ng\:cloak], [ng-cloak], .ng-cloak {
+	display: none !important;
+}
+</style>
+</head>
+
+<body ng-app="hello" ng-cloak class="ng-cloak" ng-controller="home">
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<p>
+				<a class="navbar-brand" href='#/'><b>Home</b></a>
+			</p>
+			<p class="navbar-text navbar-right" ng-show="authenticated">
+				Signed in as <a href="#/" class="navbar-link">{{user}}</a>
+			</p>
+		</div>
+	</nav>
+	<div class="container">
+		<h1>Message</h1>
+		<div ng-show="authenticated">
+			<p>The ID is {{greeting.id}}</p>
+			<p>The content is {{greeting.content}}</p>
+		</div>
+		<div ng-show="!authenticated">
+			<p>Login to see your greeting</p>
+		</div>
+	</div>
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="js/hello.js" type="text/javascript"></script>
+</body>
+</html>
